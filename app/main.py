@@ -4,7 +4,7 @@ load_dotenv()
 
 
 def add(a, b):
-    return a - b
+    return a + b
 
 
 def get_values_from_env():

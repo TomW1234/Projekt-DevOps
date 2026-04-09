@@ -1,5 +1,6 @@
 # Python projekt - lekce 2 DÚ
 # Branch pokus
+# Branch branch2
 
 Jednoduchý projekt, který načte hodnoty 'A' a 'B' ze souboru '.env', sečte je a vypíše výsledek.
 

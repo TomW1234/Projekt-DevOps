@@ -1,4 +1,4 @@
-# Python projekt
+# Python projekt - lekce 2
 
 Jednoduchý projekt, který načte hodnoty 'A' a 'B' ze souboru '.env', sečte je a vypíše výsledek.
 

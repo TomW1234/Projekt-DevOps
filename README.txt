@@ -1,4 +1,4 @@
-# Python projekt - lekce 2 DÚ;:q DÚ
+# Python projekt - lekce 2 DÚ
 
 Jednoduchý projekt, který načte hodnoty 'A' a 'B' ze souboru '.env', sečte je a vypíše výsledek.
 

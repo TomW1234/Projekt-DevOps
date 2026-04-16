@@ -1,8 +1,8 @@
 from main import add, get_values_from_env
 
 def test_get_values_from_env(monkeypatch):
-    monkeypatch.setenv("A", "15")
-    monkeypatch.setenv("B", "25")
+    monkeypatch.setenv("A", "10")
+    monkeypatch.setenv("B", "30")
 
     a, b = get_values_from_env()
 

@@ -1,1 +1,56 @@
-adresář pro nastavení CI/CD pomocí Terraform
+Struktura adresáře
+
+Projekt-DevOps
+|
+--.gitignore
+--app
+  terraform
+  |
+  --main.tf
+  --outputs.tf
+  --README_terraform
+  --terraform.tfstate
+  --terraform.tfvars
+  --variables.tf
+    |
+    modules
+      |
+      ec2
+      |
+      --main.tf
+      --outputs.tf
+      --variables.tf
+
+
+terraform.tfvars - obsahuje nastavení proměnných pro variables.tf
+
+    aws_region_ec2  = "eu-west-1"
+    ami_id_ec2      = ""
+    instance_type_ec2 = "t3.micro"
+    instance_name_ec2 = "TW_ec2"
+
+main.tf - práce s AWS + region, vygeneruje nový RSA SSH klíč, 
+          zavolá lokální modul ./modules/ec2 a předá mu AMI, typ instance, jméno instance a název vytvořeného key pairu
+
+\terraform\modules\ec2 -  na základě předaných proměnných vytvoří AWS EC2 instanci
+                          ami_id se buď přenese z root, nebo se vyhledá vhodné amazon_linux_2
+
+
+
+Použité příkazy:
+
+sudo apt update && sudo apt install terraform
+terraform init
+terraform validate
+terraform plan
+terraform plan -out /tmp/terraform_plan.tf
+terraform apply "/tmp/terraform_plan.tf"
+ssh -i "id_rsa" ec2-user@ec2-108-131-248-70.eu-west-1.compute.amazonaws.com
+ssh -i ~/.ssh/TW_ec2-key.pem ec2-user@ec2-34-244-116-241.eu-west-1.compute.amazonaws.com
+
+https://github.com/TomW1234/Projekt-DevOps.git
+
+git remote set-url origin git@github.com:TomW1234/Projekt-DevOps.git
+   origin  git@github.com:TomW1234/Projekt-DevOps.git (fetch)
+   origin  git@github.com:TomW1234/Projekt-DevOps.git (push)
+git push origin master

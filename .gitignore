@@ -7,3 +7,4 @@ crash.*.log
 *.tfvars.json
 .terraformrc
 terraform.rc
+terraform/.terraform/providers/registry.terraform.io

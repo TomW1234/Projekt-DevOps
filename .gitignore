@@ -9,3 +9,5 @@ crash.*.log
 terraform.rc
 terraform/.terraform/providers/registry.terraform.io/*
 terraform-provider-aws_v6.42.0_x5
+*.pem
+*.key
